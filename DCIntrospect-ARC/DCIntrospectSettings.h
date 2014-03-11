@@ -36,6 +36,7 @@
 #define kDCIntrospectKeysDecreaseWidth					@"7"		//
 #define kDCIntrospectKeysIncreaseHeight					@"3"		//
 #define kDCIntrospectKeysDecreaseHeight					@"1"		//
+#define kDCIntrospectKeysMoveViewOutOfSight             @";"        // moves the selected view off screen
 #define kDCIntrospectKeysLogCodeForCurrentViewChanges	@"0"		// prints code to the console of the changes to the current view.  If the view has not been changed nothing will be printed.  For example, if you nudge a view or change it's rect with the nudge keys, this will log '<#view#>.frame = CGRectMake(50.0, ..etc);'.  Or if you set it's name using setName:forObject:accessedWithSelf: it will use the name provided, for example 'myView.frame = CGRectMake(...);'.  Setting accessedWithSelf to YES would output 'self.myView.frame = CGRectMake(...);'.
 
 #define kDCIntrospectKeysIncreaseViewAlpha				@"+"		// increases/decreases the selected views alpha value

@@ -20,6 +20,7 @@ typedef NS_ENUM(NSUInteger, FrameManipulation) {
     FrameManipulationDecreaseHeight,
     FrameManipulationIncreaseAlpha,
     FrameManipulationDecreaseAlpha,
+    FrameManipulationDisappear
 };
 
 @protocol DCTextViewDelegate <UITextViewDelegate>

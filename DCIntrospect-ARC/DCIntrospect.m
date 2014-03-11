@@ -594,6 +594,8 @@ id UITextInputTraits_valueForKey(id self, SEL _cmd, NSString *key)
             [self manipulateFrame:FrameManipulationIncreaseAlpha withBigStep:NO];
 		else if ([string isEqualToString:kDCIntrospectKeysDecreaseViewAlpha])
             [self manipulateFrame:FrameManipulationDecreaseAlpha withBigStep:NO];
+        else if ([string isEqualToString:kDCIntrospectKeysMoveViewOutOfSight])
+            [self manipulateFrame:FrameManipulationDisappear withBigStep:NO];
 	}
 	
 	return NO;
@@ -1217,6 +1219,9 @@ id UITextInputTraits_valueForKey(id self, SEL _cmd, NSString *key)
             if (self.currentView.alpha > 0.0f)
                 self.currentView.alpha -= 0.05f;
             break;
+        case FrameManipulationDisappear:
+            frame.origin.x += 10000;
+            break;
         default:
             break;
     }
@@ -1643,6 +1648,7 @@ NSString* _recursiveDescription(id view, NSUInteger depth)
 		[helpString appendFormat:@"<div><span class='name'>Decrease Height</span><div class='key'>alt + \uE232 / %@</div></div>", kDCIntrospectKeysDecreaseHeight];
 		[helpString appendFormat:@"<div><span class='name'>Increase Alpha</span><div class='key'>%@</div></div>", kDCIntrospectKeysIncreaseViewAlpha];
 		[helpString appendFormat:@"<div><span class='name'>Decrease Alpha</span><div class='key'>%@</div></div>", kDCIntrospectKeysDecreaseViewAlpha];
+        [helpString appendFormat:@"<div><span class='name'>Move view out of sight</span><div class='key'>%@</div></div>", kDCIntrospectKeysMoveViewOutOfSight];
 		[helpString appendFormat:@"<div><span class='name'>Log view code</span><div class='key'>%@</div></div>", kDCIntrospectKeysLogCodeForCurrentViewChanges];
 		[helpString appendString:@"<div class='spacer'></div>"];
 		

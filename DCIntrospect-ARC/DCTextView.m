@@ -25,6 +25,7 @@
              [UIKeyCommand keyCommandWithInput:kDCIntrospectKeysNudgeViewRight modifierFlags:0 action:@selector(nudgeViewRight)],
              [UIKeyCommand keyCommandWithInput:kDCIntrospectKeysNudgeViewUp modifierFlags:0 action:@selector(nudgeViewUp)],
              [UIKeyCommand keyCommandWithInput:kDCIntrospectKeysNudgeViewDown modifierFlags:0 action:@selector(nudgeViewDown)],
+             [UIKeyCommand keyCommandWithInput:kDCIntrospectKeysMoveViewOutOfSight modifierFlags:0 action:@selector(moveOutOfSight)],
              [UIKeyCommand keyCommandWithInput:kDCIntrospectKeysCenterInSuperview modifierFlags:0 action:@selector(centerInSuperview)],
              [UIKeyCommand keyCommandWithInput:kDCIntrospectKeysIncreaseWidth modifierFlags:0 action:@selector(increaseWidth)],
              [UIKeyCommand keyCommandWithInput:kDCIntrospectKeysDecreaseWidth modifierFlags:0 action:@selector(decreaseWidth)],
@@ -143,6 +144,10 @@
 
 - (void) decreaseHeight {
     [self.keyboardInputDelegate manipulateFrame:FrameManipulationDecreaseHeight withBigStep:NO];
+}
+
+- (void) moveOutOfSight {
+    [self.keyboardInputDelegate manipulateFrame:FrameManipulationDisappear withBigStep:NO];
 }
 
 - (void) logCodeForCurrentViewChanges {
